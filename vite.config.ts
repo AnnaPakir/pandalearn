@@ -2,10 +2,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Относительный путь гарантирует, что ресурсы загрузятся правильно на любом URL
-  base: './',
+  // Название вашего репозитория в точности как на GitHub
+  base: '/pandalearn/', 
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
