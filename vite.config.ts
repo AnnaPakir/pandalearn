@@ -1,15 +1,14 @@
-
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Название вашего репозитория в точности как на GitHub
-  base: '/pandalearn/', 
+  base: '/pandalearn/',
+  root: './', // Явно указываем, что всё лежит в корне
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
-    emptyOutDir: true
+    rollupOptions: {
+      input: 'index.html' // Указываем точку входа
+    }
   }
 })
