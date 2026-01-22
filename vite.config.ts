@@ -1,11 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Оставляем пустую строку или './', чтобы пути к картинкам и скриптам всегда были правильными
-  base: './',
+  // Пустая строка '' или './' заставляет Vite использовать относительные пути,
+  // что критически важно для работы на GitHub Pages в подпапках.
+  base: '',
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
   }
 })
